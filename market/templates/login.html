@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Login Page!</title>
+{% endblock %}
+
+{% block body %}
+    <body>
+        <div class="d-flex align-items-center justify-content-center" style="height:550px">
+            <div class="container">
+                <form method="POST" class="form-register" style="color: white;">
+                    {{ form.hidden_tag() }}
+                    <br>
+                    <h1 class="h3 mb-3 font-weight-normal">
+                        Login Here
+                    </h1>
+                    <br>
+                    {{ form.userName(class="form-control", placeholder="Enter User Name") }}
+                    <br>
+                    {{ form.password(class="form-control",placeholder="Enter Passwword") }}
+                    <br>
+
+                    <div class="checkbox mb-3">
+                        <h6>New User?</h6>
+                        <a class="btn btn-sm btn-secondary" href={{ url_for('register_page') }}>Register here</a>
+                    </div>
+                    
+                    {{ form.submit(class="btn ntm-lg btn-block btn-primary") }}
+                </form>
+            </div>
+        </div>
+    </body>
+{% endblock %}
